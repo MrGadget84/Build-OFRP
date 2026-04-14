@@ -58,12 +58,6 @@ jobs:
     - name: Cleanup
       uses: rokibhasansagar/slimhub_actions@main
 
-    - name: Start Work Message
-      run: |
-        curl -s -X POST https://telegram.org{{ secrets.TG_TOKEN }}/sendMessage \
-        -d chat_id=${{ secrets.TG_CHAT_ID }} \
-        -d text="Workflow OrangeFox is Started!"
-
     - name: Initialize workspace
       run: |
         mkdir workspace
@@ -127,12 +121,6 @@ jobs:
       with:
         swap-size-gb: 12
 
-    - name: Send Start Message
-      run: |
-        curl -s -X POST https://telegram.org{{ secrets.TG_TOKEN }}/sendMessage \
-        -d chat_id=${{ secrets.TG_CHAT_ID }} \
-        -d text="Build OrangeFox is Started!"
-
     - name: Building recovery
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
@@ -164,22 +152,3 @@ jobs:
           Target: ${{ github.event.inputs.BUILD_TARGET }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Send Error Log
-      if: failure()
-      run: |
-        # Архивируем логи, если билд упал
-        tar -czf logs.tar.gz out/error.log || last_lines=$(tail -n 50 build.log)
-        curl -F chat_id=${{ secrets.TG_CHAT_ID }} -F document=@logs.tar.gz https://telegram.org{{ secrets.TG_TOKEN }}/sendDocument \
-        -F caption="У тебя сборка упала, лашпед"
-
-
-    - name: Send Files to TG
-      if: success()
-      run: |
-        cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}
-        for file in OrangeFox*.zip OrangeFox*.img; do
-          curl -F chat_id=${{ secrets.TG_CHAT_ID }} -F document=@"$file" https://telegram.org{{ secrets.TG_TOKEN }}/sendDocument \
-          -F caption="✅ Build Complete! Файл: $file"
-        done
-
