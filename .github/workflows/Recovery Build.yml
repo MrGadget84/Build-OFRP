@@ -58,6 +58,12 @@ jobs:
     - name: Cleanup
       uses: rokibhasansagar/slimhub_actions@main
 
+    - name: Start Work Message
+      run: |
+        curl -s -X POST https://telegram.org{{ secrets.TG_TOKEN }}/sendMessage \
+        -d chat_id=${{ secrets.TG_CHAT_ID }} \
+        -d text="Workflow OrangeFox is Started!"
+
     - name: Initialize workspace
       run: |
         mkdir workspace
@@ -77,12 +83,6 @@ jobs:
         sed -i 's/cd -/cd ../g' setup/install_android_sdk.sh
         sudo bash setup/install_android_sdk.sh
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
-
-    - name: Start Work Message
-      run: |
-        curl -s -X POST https://telegram.org{{ secrets.TG_TOKEN }}/sendMessage \
-        -d chat_id=${{ secrets.TG_CHAT_ID }} \
-        -d text="Workflow OrangeFox is Started!"
 
     - name: Install OpenJDK
       uses: actions/setup-java@v4
