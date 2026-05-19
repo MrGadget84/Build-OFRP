@@ -14,15 +14,15 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/MrGadget84/recovery_device_xiaomi_blossom'
+        default: 'https://github.com/MrGadget84/recovery_samsung_chagalllte'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'ofox-12.1'
+        default: 'ofox'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/xiaomi/blossom'
+        default: 'device/samsung/chagalllte'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -32,11 +32,11 @@ on:
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'blossom'
+        default: 'chagalllte'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'twrp_blossom'
+        default: 'omni_chagalllte'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
