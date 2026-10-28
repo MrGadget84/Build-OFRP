@@ -24,13 +24,13 @@
 | ------------ | -------------------- | ------------ |
 | `SYNC_URL` | Script specified by OrangeFox | https://gitlab.com/OrangeFox/sync.git |
 | `MANIFEST_BRANCH` | Source branch | 12.1                                                         |
-| `DEVICE_TREE_URL` | Device address | https://github.com/MrGadget84/device_xiaomi_samsung_a32 |
+| `DEVICE_TREE_URL` | Device address | https://github.com/MrGadget84/recovery_device_xiaomi_fuxi |
 | `DEVICE_TREE_BRANCH` | Device branch | fox_12.1 |
-| `DEVICE_PATH` | Device location | device/samsung/a32 |
+| `DEVICE_PATH` | Device location | device/xiaomi/fuxi |
 | `COMMON_TREE_URL` | Common tree address |  |
 | `COMMON_PATH` | Common tree location |  |
-| `DEVICE_NAME` | Model name | a32 |
-| `MAKEFILE_NAME` | Makefile name | twrp_a32 |
+| `DEVICE_NAME` | Model name | fuxi |
+| `MAKEFILE_NAME` | Makefile name | twrp_fuxi |
 | `BUILD_TARGET` | Build Target Partition (boot/recovery/vendorboot) | recovery |
 
 -----

@@ -23,13 +23,13 @@
 | ------------ | -------------------- | ------------ |
 | `SYNC_URL` | OrangeFox 提供的同步脚本 | https://gitlab.com/OrangeFox/sync.git |
 | `MANIFEST_BRANCH` | 源码分支 | 12.1                                                         |
-| `DEVICE_TREE_URL` | Device tree URL | https://github.com/OrangeFoxRecovery/device_xiaomi_laurel_sprout |
+| `DEVICE_TREE_URL` | Device tree URL | https://github.com/MrGadget84/recovery_device_xiaomi_fuxi |
 | `DEVICE_TREE_BRANCH` | Device tree 分支 | fox_12.1 |
-| `DEVICE_PATH` | Device tree 位置 | device/xiaomi/laurel_sprout |
+| `DEVICE_PATH` | Device tree 位置 | device/xiaomi/fuxi |
 | `COMMON_TREE_URL` | Common tree URL |  |
 | `COMMON_PATH` | Common tree 位置 |  |
-| `DEVICE_NAME` | 机型 | laurel_sprout |
-| `MAKEFILE_NAME` | Makefile 名称 | twrp_laurel_sprout |
+| `DEVICE_NAME` | 机型 | fuxi |
+| `MAKEFILE_NAME` | Makefile 名称 | twrp_fuxi |
 | `BUILD_TARGET` | 编译目标(boot/recovery/vendorboot) | recovery |
 
 -----
